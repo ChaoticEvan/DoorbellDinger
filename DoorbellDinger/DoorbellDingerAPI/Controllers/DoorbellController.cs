@@ -26,7 +26,6 @@ namespace DoorbellDingerAPI.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         public void Ding()
         {
             var accountSid = _config.GetSection("TwilioSid").Value;
