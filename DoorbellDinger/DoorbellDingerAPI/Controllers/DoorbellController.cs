@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,7 +12,7 @@ using Twilio.Rest.Api.V2010.Account;
 namespace DoorbellDingerAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]/[action]")]
     public class DoorbellController : ControllerBase
     {
         private readonly ILogger<DoorbellController> _logger;
@@ -24,7 +25,8 @@ namespace DoorbellDingerAPI.Controllers
             _config = config;
         }
 
-        [HttpPost]
+        [HttpGet]
+        [AllowAnonymous]
         public void Ding()
         {
             var accountSid = _config.GetSection("TwilioSid").Value;
