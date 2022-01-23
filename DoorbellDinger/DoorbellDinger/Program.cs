@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
+using System.Configuration;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 
@@ -8,17 +10,22 @@ namespace DoorbellDinger
     {
         static void Main(string[] args)
         {
-            // Find your Account SID and Auth Token at twilio.com/console
-            // and set the environment variables. See http://twil.io/secure
-            string accountSid = Environment.GetEnvironmentVariable("TWILIO_ACCOUNT_SID");
-            string authToken = Environment.GetEnvironmentVariable("TWILIO_AUTH_TOKEN");
+            var config = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddUserSecrets<Program>()
+                .Build();
 
-            TwilioClient.Init(accountSid, authToken);
+            var accountSid = config.GetSection("TwilioSid").Value;
+            var accountAuthToken = config.GetSection("TwilioAuthToken").Value;
+            var fromNumber = config.GetSection("FromNumber").Value;
+            var toNumber = config.GetSection("ToNumber").Value;
+
+            TwilioClient.Init(accountSid, accountAuthToken);
 
             var message = MessageResource.Create(
                 body: "Does this work?",
-                from: new Twilio.Types.PhoneNumber("+15017122661"),
-                to: new Twilio.Types.PhoneNumber("+15558675310")
+                from: new Twilio.Types.PhoneNumber(fromNumber),
+                to: new Twilio.Types.PhoneNumber(toNumber)
             );
 
             Console.WriteLine(message.Sid);
