@@ -5,6 +5,11 @@ using Twilio.Rest.Api.V2010.Account;
 
 namespace DoorbellDinger
 {
+    /// <summary>
+    /// Proof of concept console app
+    /// 
+    /// Created following Twilio's tutorial here: https://www.twilio.com/docs/sms/quickstart/csharp-dotnet-core
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
