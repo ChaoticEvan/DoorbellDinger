@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorbellDinger", "DoorbellDinger\DoorbellDinger.csproj", "{13F8AEF9-08CF-4826-B020-1FA6805DF910}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13F8AEF9-08CF-4826-B020-1FA6805DF910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F8AEF9-08CF-4826-B020-1FA6805DF910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F8AEF9-08CF-4826-B020-1FA6805DF910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F8AEF9-08CF-4826-B020-1FA6805DF910}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F60B1214-9F94-4CAD-9346-32E55E8958CC}
+	EndGlobalSection
+EndGlobal
